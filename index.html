@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>UpChat RN</title>
+<style>
+:root{--accent:#2AABEE;--bg:#0B141A;--bg2:#111B21;--surface:#1F2C34;--text:#E9EDEF;--text2:#8696A0;--bubble-me:#005C4B;--bubble-them:#1F2C34;--input:#2A3942;--border:rgba(255,255,255,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--text);height:100dvh;overflow:hidden}
+#root{height:100%;display:flex;flex-direction:column;max-width:480px;margin:0 auto}
+.screen{flex:1;display:flex;flex-direction:column;min-height:0}
+header.app{padding:14px 18px;border-bottom:1px solid var(--border);background:var(--bg2)}
+header.app h1{margin:0;font-size:1.4rem;font-weight:800}header.app p{margin:4px 0 0;color:var(--text2);font-size:.85rem}
+.tabs{display:flex;border-top:1px solid var(--border);background:rgba(17,27,33,.95)}
+.tabs button{flex:1;background:0;border:0;color:var(--text2);padding:12px 8px;font-size:.8rem;cursor:pointer}
+.tabs button.active{color:var(--accent);font-weight:700}
+.list{flex:1;overflow-y:auto;padding:8px 0}
+.row{display:flex;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer}
+.row:hover{background:var(--surface)}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-weight:700;color:#fff;flex-shrink:0}
+.meta{flex:1;min-width:0}.meta .name{font-weight:600}.meta .preview{color:var(--text2);font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{background:var(--accent);color:#fff;border-radius:10px;padding:2px 7px;font-size:.75rem;font-weight:700}
+.dot{width:10px;height:10px;border-radius:50%}.dot.on{background:#25D366}.dot.off{background:#667781}
+.btn{margin:12px 16px;padding:12px;border-radius:14px;border:1px solid var(--border);background:var(--surface);color:var(--accent);font-weight:700;cursor:pointer;width:calc(100% - 32px)}
+.btn.primary{background:var(--accent);color:#fff;border:0}.btn.danger{color:#EF5350;border-color:#EF5350}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px}
+.bubble{max-width:82%;padding:8px 12px;border-radius:16px;font-size:.95rem;line-height:1.35}
+.bubble.me{align-self:flex-end;background:var(--bubble-me)}.bubble.them{align-self:flex-start;background:var(--bubble-them);border:1px solid var(--border)}
+.bubble time{display:block;text-align:right;font-size:.7rem;opacity:.7;margin-top:4px}
+.composer{display:flex;gap:8px;padding:10px;border-top:1px solid var(--border);background:var(--bg2)}
+.composer input{flex:1;border:0;border-radius:22px;padding:12px 14px;background:var(--input);color:var(--text);font-size:1rem;outline:0}
+.composer button{width:44px;height:44px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;font-size:1.1rem}
+.onboard{flex:1;display:flex;flex-direction:column;justify-content:center;padding:28px}
+.logo{width:72px;height:72px;border-radius:22px;background:var(--accent);display:grid;place-items:center;font-size:2rem;font-weight:800;color:#fff;margin-bottom:16px}
+.onboard h1{margin:0 0 8px;font-size:2rem}.onboard p{color:var(--text2);line-height:1.45}
+.onboard input{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:var(--input);color:var(--text);font-size:1rem;margin:16px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:10px 14px;border-radius:20px;background:var(--input);border:0;color:var(--text);cursor:pointer;font-weight:600}
+.chip.on{background:var(--accent);color:#fff}
+.card{margin:16px;padding:16px;border-radius:16px;border:1px solid var(--border);background:var(--surface)}
+.empty{padding:40px 28px;color:var(--text2);line-height:1.5}
+.back{background:0;border:0;color:var(--accent);font-size:1rem;cursor:pointer;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="./app.js"></script>
+</body>
+</html>

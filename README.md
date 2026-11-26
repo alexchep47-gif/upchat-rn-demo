@@ -1,2 +1,5 @@
-# upchat-rn-demo
-UpChat RN web demo - offline-first messaging prototype
+# UpChat RN Demo
+
+Messagerie offline-first (prototype web).
+
+Ouvre le site Vercel apres deploiement.
